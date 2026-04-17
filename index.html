@@ -166,7 +166,7 @@ html,body{
             <div class="contact-card">
                 <a href="tel:+919925166695" class="info-row"><div class="icon-box"><i class="fas fa-phone-alt"></i></div><div class="info-text"><span>+91 99251 66695</span></div></a>
                 <a href="mailto:director@ppsavanicbse.org" class="info-row"><div class="icon-box"><i class="fas fa-envelope"></i></div><div class="info-text"><span>director@ppsavanicbse.org</span></div></a>
-                <div class="info-row"><div class="icon-box"><i class="fas fa-map-marker-alt"></i></div><div class="info-text"><span>Abrama, Surat-394150.</span></div></div>
+                <div class="info-row"><div class="icon-box"><i class="fas fa-map-marker-alt"></i></div><div class="info-text"><span>P.P.Savani Chaitanya Vidya Sankul Abrama, Surat-394150.</span></div></div>
             </div>
             <button class="save-btn" onclick="downloadVCard()">SAVE TO CONTACTS</button>
         </div>
@@ -206,24 +206,150 @@ html,body{
 let currentData = [];
 const branches = [
     { 
-        name: "P.P. SAVANI CHAITANYA VIDYA SANKUL-ABRAMA", 
+        name: "P.P SAVANI CHAITANYA VIDYA SANKUL-ABRAMA", 
         isCategory: true,
-subBranches: [
-    { name: "PPSCVS<br>CBSE", addr: "ABRAMA", grade: "NURSURY TO 12TH SCIENCE - COMMERCE & HUMANITIES", branch_type: "ENGLISH MEDIUM", img: "P. P. Savani Chaitanya Vidya Sankul Abrama, Surat.png", links: { fb: "https://www.facebook.com/PPSAVANICBSEABRAMA", ig: "https://www.instagram.com/ppsavani_cbse/", yt: "https://www.youtube.com/@PPSAVANIABRAMA", phone: ["+91 99099 91024", "+91 99099 91034"], map: "https://maps.app.goo.gl/RMwzTu5pWM38iCzb9", web: "https://ppsavanicbse.org/" } },
-    { name: "PPSCVS<br>GSEB PRIMARY", addr: "ABRAMA", grade: "NURSURY TO 8TH STANDARD", branch_type: "GUJRATI MEDIUM", img: "P. P. Savani Chaitanya Vidya Sankul Abrama, Surat.png", links: { fb: "https://www.facebook.com/PPSAVANIGSEBABRAMA", ig: "https://www.instagram.com/ppsavani_gseb_guj/", yt: "https://www.youtube.com/@PPSAVANIABRAMA", phone: ["+91 99099 91025", "+91 99099 91034"], map: "https://maps.app.goo.gl/RMwzTu5pWM38iCzb9", web: "https://ppsavanigseb.org/" } },
-    { name: "PPSCVS<br>GSEB SECONDARY & COMMERCE", addr: "ABRAMA", grade: "9TH STANDARD TO 12TH STANDARD", branch_type: "GUJRATI MEDIUM", img: "P. P. Savani Chaitanya Vidya Sankul Abrama, Surat.png", links: { fb: "https://www.facebook.com/PPSAVANIGSEBABRAMA", ig: "https://www.instagram.com/ppsavani_gseb_guj/", yt: "https://www.youtube.com/@PPSAVANIABRAMA", phone: ["+91 99099 91026", "+91 99099 91034"], map: "https://maps.app.goo.gl/RMwzTu5pWM38iCzb9", web: "https://ppsavanigseb.org/" } },
-    { name: "PPSCVS<br>GSEB SCIENCE", addr: "ABRAMA", grade: "11TH STANDARD AND 12TH STANDARD", branch_type: "GUJRATI MEDIUM", img: "P. P. Savani Chaitanya Vidya Sankul Abrama, Surat.png", links: { fb: "https://www.facebook.com/PPSAVANIGSEBABRAMA", ig: "https://www.instagram.com/ppsavani_gseb_guj/", yt: "https://www.youtube.com/@PPSAVANIABRAMA", phone: ["+91 99099 91027", "+91 99099 91034", "+91 99099 91037"], map: "https://maps.app.goo.gl/RMwzTu5pWM38iCzb9", web: "https://ppsavanigseb.org/" } },
-    { name: "PPSCVS<br>GSEB ENGLISH MEDIUM", addr: "ABRAMA", grade: "NURSURY TO 11TH STANDARD", branch_type: "ENGLISH MEDIUM", img: "P. P. Savani Chaitanya Vidya Sankul Abrama, Surat.png", links: { fb: "https://www.facebook.com/PPSCVSGSEBENGMED", ig: "https://www.instagram.com/ppsavani_gseb_eng/", yt: "https://www.youtube.com/@PPSAVANIABRAMA", phone: ["+91 99099 91028", "+91 99099 91034"], map: "https://maps.app.goo.gl/RMwzTu5pWM38iCzb9", web: null } }
-]
+        subBranches: [
+            { 
+                name: "PPSCVS CBSE", 
+                addr: "ABRAMA", 
+                grade: "NURSURY TO 12TH SCIENCE - COMMERCE & HUMANITIES", 
+                branch_type: "ENGLISH MEDIUM", 
+                img: "P. P. Savani Chaitanya Vidya Sankul Abrama, Surat.png", 
+                links: { 
+                    fb: "https://www.facebook.com/PPSAVANICBSEABRAMA", 
+                    ig: "https://www.instagram.com/ppsavani_cbse/", 
+                    yt: "https://www.youtube.com/@PPSAVANIABRAMA", 
+                    phone: ["+91 99099 91024", "+91 99099 91034"], 
+                    map: "https://maps.app.goo.gl/RMwzTu5pWM38iCzb9", 
+                    web: "https://ppsavanicbse.org/" 
+                } 
+            },
+            { 
+                name: "PPSCVS GSEB PRIMARY", 
+                addr: "ABRAMA", 
+                grade: "NURSURY TO 8TH STANDARD", 
+                branch_type: "GUJRATI MEDIUM", 
+                img: "P. P. Savani Chaitanya Vidya Sankul Abrama, Surat.png", 
+                links: { 
+                    fb: "https://www.facebook.com/PPSAVANIGSEBABRAMA", 
+                    ig: "https://www.instagram.com/ppsavani_gseb_guj/", 
+                    yt: "https://www.youtube.com/@PPSAVANIABRAMA", 
+                    phone: ["+91 99099 91025", "+91 99099 91034"], 
+                    map: "https://maps.app.goo.gl/RMwzTu5pWM38iCzb9", 
+                    web: "https://ppsavanigseb.org/" 
+                } 
+            },
+            { 
+                name: "PPSCVS GSEB SECONDARY & COMMERCE", 
+                addr: "ABRAMA", 
+                grade: "9TH STANDARD TO 12TH STANDARD", 
+                branch_type: "GUJRATI MEDIUM", 
+                img: "P. P. Savani Chaitanya Vidya Sankul Abrama, Surat.png", 
+                links: { 
+                    fb: "https://www.facebook.com/PPSAVANIGSEBABRAMA", 
+                    ig: "https://www.instagram.com/ppsavani_gseb_guj/", 
+                    yt: "https://www.youtube.com/@PPSAVANIABRAMA", 
+                    phone: ["+91 99099 91026", "+91 99099 91034"], 
+                    map: "https://maps.app.goo.gl/RMwzTu5pWM38iCzb9", 
+                    web: "https://ppsavanigseb.org/" 
+                } 
+            },
+            { 
+                name: "PPSCVS GSEB SCIENCE", 
+                addr: "ABRAMA", 
+                grade: "11TH STANDARD AND 12TH STANDARD", 
+                branch_type: "GUJRATI MEDIUM", 
+                img: "P. P. Savani Chaitanya Vidya Sankul Abrama, Surat.png", 
+                links: { 
+                    fb: "https://www.facebook.com/PPSAVANIGSEBABRAMA", 
+                    ig: "https://www.instagram.com/ppsavani_gseb_guj/", 
+                    yt: "https://www.youtube.com/@PPSAVANIABRAMA", 
+                    phone: ["+91 99099 91027", "+91 99099 91034", "+91 99099 91037"], 
+                    map: "https://maps.app.goo.gl/RMwzTu5pWM38iCzb9", 
+                    web: "https://ppsavanigseb.org/" 
+                } 
+            },
+            { 
+                name: "PPSCVS GSEB ENGLISH MEDIUM", 
+                addr: "ABRAMA", 
+                grade: "NURSURY TO 11TH STANDARD", 
+                branch_type: "ENGLISH MEDIUM", 
+                img: "P. P. Savani Chaitanya Vidya Sankul Abrama, Surat.png", 
+                links: { 
+                    fb: "https://www.facebook.com/PPSCVSGSEBENGMED", 
+                    ig: "https://www.instagram.com/ppsavani_gseb_eng/", 
+                    yt: "https://www.youtube.com/@PPSAVANIABRAMA", 
+                    phone: ["+91 99099 91028", "+91 99099 91034"], 
+                    map: "https://maps.app.goo.gl/RMwzTu5pWM38iCzb9", 
+                    web: null
+                } 
+            }
+        ]
     },
-    { name: "P.P. SAVANI CAMBRIDGE INTERNAL SCHOOL-ABRAMA", addr: "ABRAMA", grade: "NURSURY TO 12TH SCIENCE & COMMERCE", branch_type: "CAMBRIDGE", img: "P. P. Savani Cambridge International School - Abrama, Surat.png", links: { fb: "https://www.facebook.com/PPSCISABRAMA", ig: "https://www.instagram.com/ppsavani_cambridge/", yt: "https://www.youtube.com/@PPSAVANIABRAMA", phone: ["+91 99099 91029", "+91 99099 91034"], map: "https://maps.app.goo.gl/Sw9viBjUB1KCtGcx7", web: "https://ppscis.org.in/" } },
-    { name: "P.P. SAVANI CENTER FOR EXCELLENCE- ABRAMA", addr: "ABRAMA", grade: "6TH STANDARD TO 12TH STANDARD", branch_type: "IIT/JEE/NEET/CA/CS/\nFOUNDATION", img: "P. P. Savani Centre for Excellence Surat.png", links: { fb: "https://www.facebook.com/ppsavanicenterforexcellence", ig: "https://www.instagram.com/ppsavanicfe/", yt: "https://www.youtube.com/@cfekota", phone: ["+91 99099 91029", "+91 99099 91034"], map: "https://maps.app.goo.gl/19kz1gEwewDwJQQZ9", web: null } },
-    { name: "P.P. SAVANI VIDHYABHAVAN - HIRABAUGH", addr: "HIRABAUGH, SURAT", grade: "NURSURY TO 12TH STANDARD", branch_type: "GSEB\nGUJRATI MEDIUM", img: "P. P. Savani Vidhyabhavan Hirabaugh, Surat.png", links: { fb: "#", ig: "https://www.instagram.com/ppsv_science_hirabaug/", yt: "http://www.youtube.com/@ppsavanihirabaug8232", phone: ["0261-6503377", "0261-6503388"], map: "https://maps.google.com/maps?ll=21.217781,72.85959&z=16&t=m&hl=en-US&gl=US&mapclient=embed&cid=3228998148117289725", web: "http://ppsavani.org/" } },
-    { name: "P.P. SAVANI VIDHYALAY DHARTI NAGAR - SURAT", addr: "SURAT", grade: "GSEB NURSURY -12TH STANDARD", branch_type: "GSEB\nGUJRATI MEDIUM", img: "P. P. Savani Vidyalay Dhartinagar, Surat.png", links: { fb: "#", ig: "#", yt: "#", phone: "#", map: "https://maps.app.goo.gl/pRdvSVmTMHF6QGUd8", web: "#" } },
-    { name: "RADIANT ENGLISH ACADEMY - UMRA", addr: "UMRA, SURAT", grade: "NURSURY -12TH STANDARD", branch_type: "CBSE\nGSEB ENGLISH", img: "Radiant English Academy, Umra & Piplod, Surat.png", links: { fb: "#", ig: "#", yt: "#", phone: ["+9190330 07681"], map: "https://maps.app.goo.gl/CCRqpQhaDfmSQjJM8", web: "https://www.radiantenglishacademy.in/" } },
-    { name: "RADIANT ENGLISH ACADEMY - PIPLOD", addr: "PIPLOD, SURAT", grade: "NURSURY TO 12TH", branch_type: "CBSE", img: "Radiant English Academy, Umra & Piplod, Surat.png", links: { fb: "#", ig: "#", yt: "#", phone: ["+919033007681"], map: "https://maps.app.goo.gl/AybkbikQVLhGh76Y6", web: "https://www.radiant.edu.in/" } },
-    { name: "P.P. SAVANI RADIANT ENGLISH ACADEMY, DABHOLI", addr: "KATARGAM", grade: "NURSURY TO 8TH", branch_type: "CBSE", img: "Radiant English Academy Dabholi, Katargam.png", links: { fb: "#", ig: "#", yt: "#", phone: "+9198240 04973", map: "https://maps.app.goo.gl/vguZhv23G7NiibTr5", web: "https://radiantkgm.edu.in/" } },
-    { name: "P.P. SAVANI SCHOOL - ANKLESHWAR", addr: "ANKLESHWAR", grade: "NURSURY -12TH", branch_type: "CBSE/GSEB", img: "P. P. Savani School Mansi Education Trust Ankleshwar, Surat.png", links: { fb: "#", ig: "#", yt: "#", phone: ["+9199258 72000"], map: "https://maps.app.goo.gl/APudzo9tBTro1mVU6", web: "https://www.ppsavaniank.com/" } }
+    { 
+        name: "P.P SAVANI CAMBRIDGE INTERNAL SCHOOL-ABRAMA", 
+        addr: "ABRAMA", 
+        grade: "NURSURY TO 12TH SCIENCE & COMMERCE", 
+        branch_type: "CAMBRIDGE", 
+        img: "P. P. Savani Cambridge International School - Abrama, Surat.png", 
+        links: { fb: "https://www.facebook.com/PPSCISABRAMA", ig: "https://www.instagram.com/ppsavani_cambridge/", yt: "https://www.youtube.com/@PPSAVANIABRAMA", phone: ["+91 99099 91029", "+91 99099 91034"], map: "https://maps.app.goo.gl/Sw9viBjUB1KCtGcx7", web: "https://ppscis.org.in/" } 
+    },
+    { 
+        name: "P.P. SAVANI CENTER FOR EXCELLENCE- ABRAMA", 
+        addr: "ABRAMA", 
+        grade: "6TH STANDARD TO 12TH STANDARD", 
+        branch_type: "IIT/JEE/NEET/CA/CS/\nFOUNDATION\nENGLISH & GUJRATI MEDIUM", 
+        img: "P. P. Savani Centre for Excellence Surat.png", 
+        links: { fb: "https://www.facebook.com/ppsavanicenterforexcellence", ig: "https://www.instagram.com/ppsavanicfe/", yt: "https://www.youtube.com/@cfekota", phone: ["+91 99099 91029", "+91 99099 91034"], map: "https://maps.app.goo.gl/19kz1gEwewDwJQQZ9", web: null } 
+    },
+    { 
+        name: "P. P. SAVANI VIDHYABHAVAN - HIRABAUGH", 
+        addr: "HIRABAUGH, SURAT", 
+        grade: "NURSURY TO 12TH STANDARD", 
+        branch_type: "GSEB\nGUJRATI MEDIUM", 
+        img: "P. P. Savani Vidhyabhavan Hirabaugh, Surat.png", 
+        links: { fb: "#", ig: "https://www.instagram.com/ppsv_science_hirabaug/", yt: "http://www.youtube.com/@ppsavanihirabaug8232", phone: ["0261-6503377", "0261-6503388", "+91 99099 91034"], map: "https://maps.google.com/maps?ll=21.217781,72.85959&z=16&t=m&hl=en-US&gl=US&mapclient=embed&cid=3228998148117289725", web: "http://ppsavani.org/" } 
+    },
+    { 
+        name: "P P SAVANI VIDHYALAY DHARTI NAGAR - SURAT", 
+        addr: "SURAT", 
+        grade: "GSEB NURSURY -12TH STANDARD", 
+        branch_type: "GSEB\nGUJRATI MEDIUM", 
+        img: "P. P. Savani Vidyalay Dhartinagar, Surat.png", 
+        links: { fb: "https://www.facebook.com/p/PPSavani-Vidhyalaya-Dhartinagar-100067607014055/", ig: "https://www.instagram.com/popular/pp-savani-school-dharti-nagar/", yt: "#", phone: "#", map: "https://maps.app.goo.gl/pRdvSVmTMHF6QGUd8", web: "#" } 
+    },
+    { 
+        name: "RADIANT ENGLISH ACADEMY - UMRA", 
+        addr: "UMRA, SURAT", 
+        grade: "NURSURY -12TH STANDARD\n1ST STANDARD TO 8TH STANDARD", 
+        branch_type: "CBSE\nGSEB ENGLISH MEDIUM", 
+        img: "Radiant English Academy, Umra & Piplod, Surat.png", 
+        links: { fb: "https://www.facebook.com/profile.php?id=61570736459928", ig: "https://www.instagram.com/radiant_english_academy_surat/", yt: "https://www.youtube.com/@radiantenglishacademysurat", phone: ["+9190330 07681", "+9190330 07682"], map: "https://maps.app.goo.gl/CCRqpQhaDfmSQjJM8", web: "https://www.radiantenglishacademy.in/" } 
+    },
+        { 
+        name: "RADIANT ENGLISH ACADEMY - PIPLOD", 
+        addr: "PIPLOD, SURAT", 
+        grade: "NURSURY TO 12TH STANDARD(SCIENCE & COMMERCE)", 
+        branch_type: "CBSE", 
+        img: "Radiant English Academy, Umra & Piplod, Surat.png", 
+        links: { fb: "https://www.facebook.com/radiantpiplod/", ig: "https://www.instagram.com/radiantenglishacademy/", yt: "https://www.youtube.com/@radiantenglishacademysurat", phone: ["+919033007681", "+9190330 07682", "+9190330 07683", "+9190330 07684"], map: "https://maps.app.goo.gl/AybkbikQVLhGh76Y6", web: "https://www.radiant.edu.in/" } 
+    },
+        { 
+        name: "P. P. SAVANI RADIANT ENGLISH ACADEMY, DABHOLI, KATARGAM", 
+        addr: "DABHOLI, KATARGAM", 
+        grade: "NURSURY TO 8TH STANDARD + FOUNDATION", 
+        branch_type: "CBSE", 
+        img: "Radiant English Academy Dabholi, Katargam.png", 
+        links: { fb: "https://www.facebook.com/people/P-P-Savani-Group-of-Schools/61570736459928/", ig: "https://www.instagram.com/radiantenglishacademy_kgm?igsh=aGkyM2dzYXhtd2E4&utm_source=qr", yt: "https://www.youtube.com/@radiantenglishacademysurat", phone: "+9198240 04973", map: "https://maps.app.goo.gl/vguZhv23G7NiibTr5", web: "https://radiantkgm.edu.in/" } 
+    },
+        { 
+        name: "P. P. SAVANI SCHOOL - ANKLESHWAR", 
+        addr: "ANKLESHWAR", 
+        grade: "NURSURY -12TH STANDARD\n1ST STANDARD TO 8TH STANDARD", 
+        branch_type: "CBSE\nGSEB ENGLISH MEDIUM\nGSEB GUJARATI MEDIUM", 
+        img: "P. P. Savani School Mansi Education Trust Ankleshwar, Surat.png", 
+        links: { fb: "https://www.facebook.com/PPSAVANICBSESCHOOL", ig: "https://cbse.ppsavaniank.com/#", yt: ["https://www.youtube.com/@p.p.savanischoolcbseankles8987","https://www.youtube.com/@PPSAVANISCHOOLEM"], phone: ["+9199258 72000","+919925 87300", "+9163520 27721"], map: "https://maps.app.goo.gl/APudzo9tBTro1mVU6", web: "https://www.ppsavaniank.com/" } 
+    }
 ];
 
 let isGridView = false;
