@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+<title>Pranay Jardosh | P.P. Savani Group</title>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+<style>
+:root{
+    --orange: #FF8C00;
+    --navy: #001f54;
+    --light-navy: #003399;
+    --dark-bg: #0f172a;
+    --glass: rgba(255, 255, 255, 0.1);
+    --card-shadow: 0 20px 40px rgba(0,0,0,0.3);
+}
+html,body{
+    margin:0; width:100%; height:100%; background: var(--dark-bg);
+    display:flex; justify-content:center; align-items:center;
+    font-family: 'Inter', 'Segoe UI', Roboto, sans-serif;
+    overflow:hidden;
+}
+#container{ width:360px; height:640px; position: relative; background: #fff; border-radius: 40px; overflow: hidden; box-shadow: var(--card-shadow); border: 8px solid #1e293b; }
+
+/* ================= PROFESSIONAL FIRST PAGE UI ================= */
+#director-card{ width:100%; height:100%; background: #f8fafc; display:flex; flex-direction:column; position: absolute; top:0; left:0; z-index: 10; }
+.dir-header { 
+    background: linear-gradient(135deg, var(--navy) 0%, #003366 100%); 
+    height: 240px; width: 100%; position: relative; 
+    display: flex; justify-content: center; align-items: center; 
+}
+.dir-header::after { 
+    content: ""; position: absolute; bottom: -2px; left: 0; width: 100%; height: 50px; 
+    background: #f8fafc; clip-path: ellipse(60% 100% at 50% 100%); 
+}
+.profile-img { 
+    width: 130px; height: 130px; border-radius: 50%; border: 6px solid #fff; 
+    object-fit: cover; box-shadow: 0 10px 25px rgba(0,0,0,0.15); z-index: 5; 
+}
+.dir-content { padding: 15px 24px; text-align: center; flex-grow: 1; display: flex; flex-direction: column; align-items: center; }
+.dir-content h2 { margin: 5px 0 8px; color: var(--navy); font-size: 24px; font-weight: 800; letter-spacing: -0.5px; width: 100%; }
+.role-tag { 
+    background: rgba(255, 140, 0, 0.15); color: var(--orange); 
+    padding: 6px 20px; border-radius: 50px; font-weight: 800; 
+    font-size: 11px; text-transform: uppercase; letter-spacing: 1px;
+    display: inline-block; margin-bottom: 10px;
+}
+.dept { font-size: 15px; color: #475569; font-weight: 600; margin-bottom: 20px; line-height: 1.2; }
+
+/* FLIP PHONE ICON TO FACE RIGHT */
+.fa-phone-alt { transform: scaleX(-1); }
+
+.contact-card { 
+    text-align: left; background: #fff; border-radius: 24px; padding: 15px; 
+    box-shadow: 0 4px 20px rgba(0,0,0,0.03); border: 1px solid #edf2f7; width: 100%; box-sizing: border-box;
+}
+.info-row { 
+    display: flex; align-items: center; gap: 12px; padding: 10px;
+    margin-bottom: 8px; text-decoration: none; border-radius: 12px;
+    transition: background 0.2s;
+}
+.info-row:active { background: #f1f5f9; }
+.icon-box { 
+    width: 36px; height: 36px; background: #eff6ff; color: var(--navy); 
+    border-radius: 10px; display: flex; align-items: center; justify-content: center; font-size: 14px; 
+}
+.info-text span { font-size: 13px; color: #334155; font-weight: 600; }
+/* 1. Updated dir-content to handle the layout */
+.dir-content { 
+    padding: 20px 24px; 
+    text-align: center; 
+    flex: 1; 
+    display: flex; 
+    flex-direction: column; 
+    align-items: center; /* Ensures children stay centered */
+    box-sizing: border-box;
+}
+
+/* 2. Updated save-btn to fit perfectly */
+.save-btn { 
+    width: 100%; 
+    background: var(--orange); 
+    color: #fff; 
+    border: none; 
+    padding: 16px; 
+    border-radius: 18px; 
+    font-weight: 800; 
+    cursor: pointer;
+    box-shadow: 0 4px 15px rgba(255, 140, 0, 0.3); 
+    margin: 5px 0; /* Changed to margin top and bottom */
+    box-sizing: border-box; 
+}
+
+/* 3. Updated view-branches-bar to stay at the very bottom */
+.view-branches-bar { 
+    background: var(--navy); 
+    color: #fff; 
+    width: 100%; 
+    padding: 20px 0; 
+    font-weight: 700; 
+    text-align: center; 
+    cursor: pointer; 
+    border: none;
+    font-size: 14px; 
+    letter-spacing: 0.5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: auto; /* This forces it to the bottom of the container */
+}
+
+/* ================= SEARCH & LIST VIEW ================= */
+#list-view { width:100%; height:100%; background:#f8f9fa; display:none; flex-direction:column; position:absolute; top:0; left:0; z-index:20; }
+.header-bar { padding:45px 20px 15px; background:var(--navy); color:white; }
+.search-container { position: relative; margin-top: 15px; }
+.search-input {
+    width: 100%; background: rgba(255,255,255,0.1); border: 1px solid rgba(255,255,255,0.2);
+    border-radius: 12px; padding: 12px 15px 12px 40px; color: white; outline: none; box-sizing: border-box;
+}
+.search-icon { position: absolute; left: 15px; top: 50%; transform: translateY(-50%); color: rgba(255,255,255,0.5); font-size: 14px; }
+
+.scroll-area { flex: 1; overflow-y: auto; padding: 20px 15px; }
+.list-item { background: white; padding: 18px; border-radius: 15px; margin-bottom: 10px; display: flex; justify-content: space-between; align-items: center; cursor: pointer; border: 1px solid #eee; font-weight: 700; color: var(--navy); }
+.grid-container { display: grid; grid-template-columns: 1fr 1fr; gap: 15px; }
+.grid-item { background: white; padding: 20px 10px; border-radius: 20px; text-align: center; border: 1px solid #eee; display: flex; flex-direction: column; align-items: center; }
+.grid-item img { width: 60px; height: 60px; object-fit: contain; margin-bottom: 10px; }
+.grid-item span { 
+    font-weight: 800; 
+    font-size: 11px; 
+    color: var(--navy); 
+    line-height: 1.4; /* Adds space between the two lines */
+    display: block;   /* Ensures the span behaves like a block for the break */
+    margin-top: 5px;
+}
+
+/* ================= DETAIL VIEW ================= */
+#card-detail-view { width: 100%; height: 100%; background: rgba(0,0,0,0.9); display: none; position: absolute; top:0; left:0; z-index: 30; justify-content: center; align-items: center; }
+.card-wrapper { width: 320px; height: 520px; perspective: 1500px; position: relative; }
+.card-inner { width: 100%; height: 100%; position: relative; transition: transform 0.6s; transform-style: preserve-3d; }
+.card-inner.flipped { transform: rotateY(180deg); }
+.card-front, .card-back { position: absolute; width: 100%; height: 100%; border-radius: 30px; backface-visibility: hidden; overflow: hidden; display: flex; flex-direction: column; background: white; }
+.card-back { background: linear-gradient(160deg, #001f54 0%, #000 100%); color: white; transform: rotateY(180deg); padding: 35px 25px; box-sizing: border-box; }
+.sketch-box { border: 2px solid rgba(255,255,255,0.3); border-radius: 15px; padding: 15px; margin-bottom: 15px; text-align: center; }
+.sketch-label { font-size: 14px; font-weight: 400; color: rgba(255,255,255,0.7); margin-bottom: 4px; display: block; }
+.sketch-value { font-size: 16px; font-weight: 700; color: #fff; white-space: pre-line; word-break: break-word; line-height: 1.2; }
+.social-grid { display: grid; grid-template-columns: repeat(5, 1fr); gap: 10px; margin: 20px 0; }
+.s-link { background: var(--glass); aspect-ratio: 1; border-radius: 12px; display: flex; align-items: center; justify-content: center; color: white; text-decoration: none; border: 1px solid rgba(255,255,255,0.1); font-size: 18px; }
+.website-btn { background: var(--orange); color: white; text-align: center; padding: 16px; border-radius: 15px; text-decoration: none; font-weight: 800; font-size: 16px; margin-top: auto; }
+.front-info { padding: 15px 20px; text-align: center; background: var(--orange); color: white; margin-top: -20px; min-height: 120px; display: flex; flex-direction: column; justify-content: center; border-radius: 30px 30px 0 0; }
+.card-back-btn { position: absolute; top: -45px; left: 0; color: white; cursor: pointer; font-weight: 600; }
+#contact-picker { display: none; position: absolute; bottom: 0; left: 0; width: 100%; background: white; border-radius: 25px 25px 0 0; z-index: 100; padding: 20px; box-sizing: border-box; }
+.picker-option { display: flex; align-items: center; gap: 15px; padding: 15px; background: #f0f4f8; border-radius: 12px; margin-bottom: 10px; text-decoration: none; color: var(--navy); font-weight: 700; }
+</style>
+</head>
+<body>
+
+<div id="container">
+    <div id="director-card">
+        <div class="dir-header">
+            <img src="pranay jardoh.jpg" class="profile-img" onerror="this.src='https://via.placeholder.com/150'">
+        </div>
+        <div class="dir-content">
+            <h2>Pranay Jardosh</h2>
+            <div><span class="role-tag">Director</span></div>
+            <div class="dept">Academics & Operations</div>
+            <div class="contact-card">
+                <a href="tel:+919925166695" class="info-row"><div class="icon-box"><i class="fas fa-phone-alt"></i></div><div class="info-text"><span>+91 99251 66695</span></div></a>
+                <a href="mailto:director@ppsavanicbse.org" class="info-row"><div class="icon-box"><i class="fas fa-envelope"></i></div><div class="info-text"><span>director@ppsavanicbse.org</span></div></a>
+                <div class="info-row"><div class="icon-box"><i class="fas fa-map-marker-alt"></i></div><div class="info-text"><span>Abrama, Surat-394150.</span></div></div>
+            </div>
+            <button class="save-btn" onclick="downloadVCard()">SAVE TO CONTACTS</button>
+        </div>
+        <div class="view-branches-bar" onclick="openListView()">VIEW ALL BRANCHES <i class="fas fa-chevron-right" style="font-size: 10px; margin-left: 5px;"></i></div>
+    </div>
+
+    <div id="list-view">
+        <div class="header-bar">
+            <div style="display:flex; align-items:center; gap:15px;">
+                <i class="fas fa-arrow-left" onclick="closeListView()" style="cursor:pointer"></i>
+                <span id="list-title" style="font-weight: 800;">BRANCHES</span>
+            </div>
+            <div class="search-container" id="search-box-wrapper">
+                <i class="fas fa-search search-icon"></i>
+                <input type="text" id="branch-search" class="search-input" placeholder="Search branches..." onkeyup="filterBranches()">
+            </div>
+        </div>
+        <div class="scroll-area" id="list-container"></div>
+    </div>
+
+    <div id="card-detail-view">
+        <div class="card-wrapper">
+            <div class="card-back-btn" onclick="closeCard()"><i class="fas fa-arrow-left"></i> Back</div>
+            <div class="card-inner" id="card-inner" onclick="handleFlipTap(event)">
+                <div class="card-front" id="card-front"></div>
+                <div class="card-back" id="card-back"></div>
+            </div>
+            <div id="contact-picker">
+                <div id="picker-options-list"></div>
+                <button onclick="hidePicker()" style="width:100%; border:none; background:none; color:#777; margin-top:10px; font-weight:700;">CANCEL</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+let currentData = [];
+const branches = [
+    { 
+        name: "P.P. SAVANI CHAITANYA VIDYA SANKUL-ABRAMA", 
+        isCategory: true,
+subBranches: [
+    { name: "PPSCVS<br>CBSE", addr: "ABRAMA", grade: "NURSURY TO 12TH SCIENCE - COMMERCE & HUMANITIES", branch_type: "ENGLISH MEDIUM", img: "P. P. Savani Chaitanya Vidya Sankul Abrama, Surat.png", links: { fb: "https://www.facebook.com/PPSAVANICBSEABRAMA", ig: "https://www.instagram.com/ppsavani_cbse/", yt: "https://www.youtube.com/@PPSAVANIABRAMA", phone: ["+91 99099 91024", "+91 99099 91034"], map: "https://maps.app.goo.gl/RMwzTu5pWM38iCzb9", web: "https://ppsavanicbse.org/" } },
+    { name: "PPSCVS<br>GSEB PRIMARY", addr: "ABRAMA", grade: "NURSURY TO 8TH STANDARD", branch_type: "GUJRATI MEDIUM", img: "P. P. Savani Chaitanya Vidya Sankul Abrama, Surat.png", links: { fb: "https://www.facebook.com/PPSAVANIGSEBABRAMA", ig: "https://www.instagram.com/ppsavani_gseb_guj/", yt: "https://www.youtube.com/@PPSAVANIABRAMA", phone: ["+91 99099 91025", "+91 99099 91034"], map: "https://maps.app.goo.gl/RMwzTu5pWM38iCzb9", web: "https://ppsavanigseb.org/" } },
+    { name: "PPSCVS<br>GSEB SECONDARY & COMMERCE", addr: "ABRAMA", grade: "9TH STANDARD TO 12TH STANDARD", branch_type: "GUJRATI MEDIUM", img: "P. P. Savani Chaitanya Vidya Sankul Abrama, Surat.png", links: { fb: "https://www.facebook.com/PPSAVANIGSEBABRAMA", ig: "https://www.instagram.com/ppsavani_gseb_guj/", yt: "https://www.youtube.com/@PPSAVANIABRAMA", phone: ["+91 99099 91026", "+91 99099 91034"], map: "https://maps.app.goo.gl/RMwzTu5pWM38iCzb9", web: "https://ppsavanigseb.org/" } },
+    { name: "PPSCVS<br>GSEB SCIENCE", addr: "ABRAMA", grade: "11TH STANDARD AND 12TH STANDARD", branch_type: "GUJRATI MEDIUM", img: "P. P. Savani Chaitanya Vidya Sankul Abrama, Surat.png", links: { fb: "https://www.facebook.com/PPSAVANIGSEBABRAMA", ig: "https://www.instagram.com/ppsavani_gseb_guj/", yt: "https://www.youtube.com/@PPSAVANIABRAMA", phone: ["+91 99099 91027", "+91 99099 91034", "+91 99099 91037"], map: "https://maps.app.goo.gl/RMwzTu5pWM38iCzb9", web: "https://ppsavanigseb.org/" } },
+    { name: "PPSCVS<br>GSEB ENGLISH MEDIUM", addr: "ABRAMA", grade: "NURSURY TO 11TH STANDARD", branch_type: "ENGLISH MEDIUM", img: "P. P. Savani Chaitanya Vidya Sankul Abrama, Surat.png", links: { fb: "https://www.facebook.com/PPSCVSGSEBENGMED", ig: "https://www.instagram.com/ppsavani_gseb_eng/", yt: "https://www.youtube.com/@PPSAVANIABRAMA", phone: ["+91 99099 91028", "+91 99099 91034"], map: "https://maps.app.goo.gl/RMwzTu5pWM38iCzb9", web: null } }
+]
+    },
+    { name: "P.P. SAVANI CAMBRIDGE INTERNAL SCHOOL-ABRAMA", addr: "ABRAMA", grade: "NURSURY TO 12TH SCIENCE & COMMERCE", branch_type: "CAMBRIDGE", img: "P. P. Savani Cambridge International School - Abrama, Surat.png", links: { fb: "https://www.facebook.com/PPSCISABRAMA", ig: "https://www.instagram.com/ppsavani_cambridge/", yt: "https://www.youtube.com/@PPSAVANIABRAMA", phone: ["+91 99099 91029", "+91 99099 91034"], map: "https://maps.app.goo.gl/Sw9viBjUB1KCtGcx7", web: "https://ppscis.org.in/" } },
+    { name: "P.P. SAVANI CENTER FOR EXCELLENCE- ABRAMA", addr: "ABRAMA", grade: "6TH STANDARD TO 12TH STANDARD", branch_type: "IIT/JEE/NEET/CA/CS/\nFOUNDATION", img: "P. P. Savani Centre for Excellence Surat.png", links: { fb: "https://www.facebook.com/ppsavanicenterforexcellence", ig: "https://www.instagram.com/ppsavanicfe/", yt: "https://www.youtube.com/@cfekota", phone: ["+91 99099 91029", "+91 99099 91034"], map: "https://maps.app.goo.gl/19kz1gEwewDwJQQZ9", web: null } },
+    { name: "P.P. SAVANI VIDHYABHAVAN - HIRABAUGH", addr: "HIRABAUGH, SURAT", grade: "NURSURY TO 12TH STANDARD", branch_type: "GSEB\nGUJRATI MEDIUM", img: "P. P. Savani Vidhyabhavan Hirabaugh, Surat.png", links: { fb: "#", ig: "https://www.instagram.com/ppsv_science_hirabaug/", yt: "http://www.youtube.com/@ppsavanihirabaug8232", phone: ["0261-6503377", "0261-6503388"], map: "https://maps.google.com/maps?ll=21.217781,72.85959&z=16&t=m&hl=en-US&gl=US&mapclient=embed&cid=3228998148117289725", web: "http://ppsavani.org/" } },
+    { name: "P.P. SAVANI VIDHYALAY DHARTI NAGAR - SURAT", addr: "SURAT", grade: "GSEB NURSURY -12TH STANDARD", branch_type: "GSEB\nGUJRATI MEDIUM", img: "P. P. Savani Vidyalay Dhartinagar, Surat.png", links: { fb: "#", ig: "#", yt: "#", phone: "#", map: "https://maps.app.goo.gl/pRdvSVmTMHF6QGUd8", web: "#" } },
+    { name: "RADIANT ENGLISH ACADEMY - UMRA", addr: "UMRA, SURAT", grade: "NURSURY -12TH STANDARD", branch_type: "CBSE\nGSEB ENGLISH", img: "Radiant English Academy, Umra & Piplod, Surat.png", links: { fb: "#", ig: "#", yt: "#", phone: ["+9190330 07681"], map: "https://maps.app.goo.gl/CCRqpQhaDfmSQjJM8", web: "https://www.radiantenglishacademy.in/" } },
+    { name: "RADIANT ENGLISH ACADEMY - PIPLOD", addr: "PIPLOD, SURAT", grade: "NURSURY TO 12TH", branch_type: "CBSE", img: "Radiant English Academy, Umra & Piplod, Surat.png", links: { fb: "#", ig: "#", yt: "#", phone: ["+919033007681"], map: "https://maps.app.goo.gl/AybkbikQVLhGh76Y6", web: "https://www.radiant.edu.in/" } },
+    { name: "P.P. SAVANI RADIANT ENGLISH ACADEMY, DABHOLI", addr: "KATARGAM", grade: "NURSURY TO 8TH", branch_type: "CBSE", img: "Radiant English Academy Dabholi, Katargam.png", links: { fb: "#", ig: "#", yt: "#", phone: "+9198240 04973", map: "https://maps.app.goo.gl/vguZhv23G7NiibTr5", web: "https://radiantkgm.edu.in/" } },
+    { name: "P.P. SAVANI SCHOOL - ANKLESHWAR", addr: "ANKLESHWAR", grade: "NURSURY -12TH", branch_type: "CBSE/GSEB", img: "P. P. Savani School Mansi Education Trust Ankleshwar, Surat.png", links: { fb: "#", ig: "#", yt: "#", phone: ["+9199258 72000"], map: "https://maps.app.goo.gl/APudzo9tBTro1mVU6", web: "https://www.ppsavaniank.com/" } }
+];
+
+let isGridView = false;
+
+function filterBranches() {
+    const term = document.getElementById('branch-search').value.toLowerCase().replace(/[^a-z0-9]/g, '');
+    const filtered = currentData.filter(b => {
+        const normalizedName = b.name.toLowerCase().replace(/[^a-z0-9]/g, '');
+        return normalizedName.includes(term);
+    });
+    renderList(filtered, isGridView, true);
+}
+
+function handleFlipTap(e) {
+    if (e.target.closest('.social-grid') || e.target.closest('#contact-picker') || e.target.closest('.website-btn')) return;
+    document.getElementById('card-inner').classList.toggle('flipped');
+}
+
+function handlePhoneClick(event, phoneData) {
+    event.stopPropagation();
+    const list = document.getElementById('picker-options-list');
+    const numbers = Array.isArray(phoneData) ? phoneData : [phoneData];
+    list.innerHTML = `<div style="text-align:center; font-weight:800; margin-bottom:15px; color:var(--navy)">CALL BRANCH</div>` + 
+        numbers.map(num => `<a href="tel:${num.replace(/\s/g,'')}" class="picker-option"><i class="fas fa-phone-alt"></i> ${num}</a>`).join('');
+    document.getElementById('contact-picker').style.display = 'block';
+}
+
+function hidePicker() { document.getElementById('contact-picker').style.display = 'none'; }
+
+function openCard(b) {
+    hidePicker();
+    document.getElementById('card-inner').classList.remove('flipped');
+    document.getElementById('card-front').innerHTML = `
+        <div style="flex:1.6; display:flex; align-items:center; justify-content:center; padding:20px;"><img src="${b.img}" style="max-width:80%;"></div>
+        <div class="front-info">
+            <h2 style="font-size:16px; margin:0;">${b.name}</h2>
+            <p style="font-size:11px; opacity:0.8; margin-top:5px;">${b.addr}</p>
+            <div style="font-size:10px; background:rgba(255,255,255,0.2); padding:6px 12px; border-radius:20px; margin-top:10px; align-self:center; font-weight:700;">TAP TO SEE DETAILS</div>
+        </div>`;
+    
+    document.getElementById('card-back').innerHTML = `
+        <div class="sketch-box"><span class="sketch-value">${b.grade}</span></div>
+        <div class="sketch-box"><span class="sketch-value">${b.branch_type}</span></div>
+        <div class="social-grid">
+            <a href="${b.links.fb}" class="s-link"><i class="fab fa-facebook-f"></i></a>
+            <a href="${b.links.ig}" class="s-link"><i class="fab fa-instagram"></i></a>
+            <a href="${b.links.yt}" class="s-link"><i class="fab fa-youtube"></i></a>
+            <div class="s-link" onclick='handlePhoneClick(event, ${JSON.stringify(b.links.phone)})'><i class="fas fa-phone-alt"></i></div>
+            <a href="${b.links.map}" class="s-link"><i class="fas fa-map-marker-alt"></i></a>
+        </div>
+        <a href="${b.links.web || '#'}" class="website-btn" style="${!b.links.web ? 'opacity:0.5; pointer-events:none;' : ''}">Website</a>`;
+        
+    document.getElementById('card-detail-view').style.display = 'flex';
+}
+
+function renderList(data, isGrid = false, isFiltering = false) {
+    const list = document.getElementById('list-container');
+    if (!isFiltering) {
+        currentData = data;
+        isGridView = isGrid;
+    }
+    
+    if(isGrid) {
+        list.innerHTML = `<div class="grid-container">` + data.map(b => `
+            <div class="grid-item" onclick='openCard(${JSON.stringify(b)})'>
+                <img src="${b.img}" onerror="this.src='https://via.placeholder.com/65'">
+                <span>${b.name}</span>
+            </div>`).join('') + `</div>`;
+    } else {
+        list.innerHTML = data.map(b => `
+            <div class="list-item" onclick='handleBranchClick(${JSON.stringify(b)})'>
+                <span>${b.name}</span><i class="fas fa-chevron-right"></i>
+            </div>`).join('');
+    }
+}
+
+function handleBranchClick(b) {
+    if(b.isCategory) {
+        document.getElementById('list-title').innerText = "CHOOSE UNIT";
+        document.getElementById('branch-search').value = "";
+        renderList(b.subBranches, true);
+    } else { openCard(b); }
+}
+
+function openListView() { 
+    document.getElementById('list-title').innerText = "BRANCHES";
+    document.getElementById('branch-search').value = "";
+    document.getElementById('search-box-wrapper').style.display = 'block';
+    renderList(branches, false); 
+    document.getElementById('list-view').style.display = 'flex'; 
+}
+function closeListView() { document.getElementById('list-view').style.display = 'none'; }
+function closeCard() { document.getElementById('card-detail-view').style.display = 'none'; }
+function downloadVCard() {
+    const vcard = `BEGIN:VCARD\nVERSION:3.0\nFN:Pranay Jardosh\nTEL;TYPE=CELL:+9199251 66695\nEND:VCARD`;
+    const blob = new Blob([vcard], { type: 'text/vcard' });
+    const url = window.URL.createObjectURL(blob);
+    const link = document.createElement('a');
+    link.href = url; link.download = 'Pranay_Jardosh.vcf'; link.click();
+}
+</script>
+</body>
+</html>
