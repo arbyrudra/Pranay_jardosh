@@ -45,7 +45,24 @@ html,body{
     font-size: 11px; text-transform: uppercase; letter-spacing: 1px;
     display: inline-block; margin-bottom: 10px;
 }
-.dept { font-size: 15px; color: #475569; font-weight: 600; margin-bottom: 20px; line-height: 1.2; }
+.dept { 
+    width: 100%;
+    color: #475569; 
+    font-weight: 700; 
+    margin-bottom: 20px; 
+    text-align: center;
+    overflow: hidden; /* Ensures no scrollbars appear */
+}
+
+.dept span { 
+    display: block; 
+    font-size: 14px; /* Increased font size */
+    white-space: nowrap; 
+    letter-spacing: -0.3px; /* Tighter letters to save space */
+    transform: scaleX(0.92); /* Subtle horizontal squeeze to force fit */
+    transform-origin: center;
+    margin-bottom: 5px;
+}
 
 /* FLIP PHONE ICON TO FACE RIGHT */
 .fa-phone-alt { transform: scaleX(-1); }
@@ -90,7 +107,14 @@ html,body{
     width: 36px; height: 36px; background: #eff6ff; color: var(--navy); 
     border-radius: 10px; display: flex; align-items: center; justify-content: center; font-size: 14px; 
 }
-.info-text span { font-size: 13px; color: #334155; font-weight: 600; }
+.info-text span { 
+    font-size: 12px; /* Slightly smaller for long emails */
+    color: #334155; 
+    font-weight: 600; 
+    line-height: 1.4;
+    display: block;
+    word-break: break-all; /* Prevents overflow */
+}
 /* 1. Updated dir-content to handle the layout */
 .dir-content { 
     padding: 20px 24px; 
@@ -183,16 +207,24 @@ html,body{
 <div id="container">
     <div id="director-card">
         <div class="dir-header">
-            <img src="pranay jardoh.jpg" class="profile-img" onerror="this.src='https://via.placeholder.com/150'">
+            <img src="profile.jpeg" class="profile-img" onerror="this.src='https://via.placeholder.com/150'">
         </div>
         <div class="dir-content">
             <h2>Pranay Jardosh</h2>
-            <div><span class="role-tag">Director</span></div>
-            <div class="dept">Academics & Operations</div>
+<div class="dept">
+    <span>Director, PP Savani Chaitanya Vidya Sankul, Abrama</span>
+    <span>Partner, PP Savani Educational Consultancy LLP</span>
+</div>
             <div class="contact-card">
                 <a href="tel:+919925166695" class="info-row"><div class="icon-box"><i class="fas fa-phone-alt"></i></div><div class="info-text"><span>+91 99251 66695</span></div></a>
-                <a href="mailto:director@ppsavanicbse.org" class="info-row"><div class="icon-box"><i class="fas fa-envelope"></i></div><div class="info-text"><span>director@ppsavanicbse.org</span></div></a>
-                <div class="info-row"><div class="icon-box"><i class="fas fa-map-marker-alt"></i></div><div class="info-text"><span>P.P.Savani Chaitanya Vidya Sankul Abrama, Surat-394150.</span></div></div>
+                <a href="mailto:franchise@ppsavanicbse.org,director@ppsavanicbse.org" class="info-row">
+    <div class="icon-box"><i class="fas fa-envelope"></i></div>
+    <div class="info-text">
+        <span>director@ppsavanicbse.org</span>
+        <span>franchise@ppsavanicbse.org</span>
+    </div>
+</a>
+                <div class="info-row"><div class="icon-box"><i class="fas fa-map-marker-alt"></i></div><div class="info-text"><span>P.P.Savani Chaitanya Vidya Sankul<br> Abrama, Mota Varacha, Surat-394150.</span></div></div>
             </div>
             <button class="save-btn" onclick="downloadVCard()">SAVE TO CONTACTS</button>
         </div>
@@ -232,29 +264,14 @@ html,body{
 let currentData = [];
 const branches = [
     { 
-        name: "P.P SAVANI CHAITANYA VIDYA SANKUL-ABRAMA", 
+        name: "P.P SAVANI CHAITANYA VIDYA SANKUL - ABRAMA (GSEB GUJARATI/GUJLISH MEDIUM)", 
         isCategory: true,
         subBranches: [
-            { 
-                name: "PPSCVS CBSE", 
-                addr: "ABRAMA", 
-                grade: "NURSURY TO 12TH SCIENCE - COMMERCE & HUMANITIES", 
-                branch_type: "ENGLISH MEDIUM", 
-                img: "P. P. Savani Chaitanya Vidya Sankul Abrama, Surat.png", 
-                links: { 
-                    fb: "https://www.facebook.com/PPSAVANICBSEABRAMA", 
-                    ig: "https://www.instagram.com/ppsavani_cbse/", 
-                    yt: "https://www.youtube.com/@PPSAVANIABRAMA", 
-                    phone: ["+91 99099 91024", "+91 99099 91034"], 
-                    map: "https://maps.app.goo.gl/RMwzTu5pWM38iCzb9", 
-                    web: "https://ppsavanicbse.org/" 
-                } 
-            },
             { 
                 name: "PPSCVS GSEB PRIMARY", 
                 addr: "ABRAMA", 
                 grade: "NURSURY TO 8TH STANDARD", 
-                branch_type: "GUJRATI MEDIUM", 
+                branch_type: "GUJARATI MEDIUM", 
                 img: "P. P. Savani Chaitanya Vidya Sankul Abrama, Surat.png", 
                 links: { 
                     fb: "https://www.facebook.com/PPSAVANIGSEBABRAMA", 
@@ -269,7 +286,7 @@ const branches = [
                 name: "PPSCVS GSEB SECONDARY & COMMERCE", 
                 addr: "ABRAMA", 
                 grade: "9TH STANDARD TO 12TH STANDARD", 
-                branch_type: "GUJRATI MEDIUM", 
+                branch_type: "GUJARATI MEDIUM", 
                 img: "P. P. Savani Chaitanya Vidya Sankul Abrama, Surat.png", 
                 links: { 
                     fb: "https://www.facebook.com/PPSAVANIGSEBABRAMA", 
@@ -284,7 +301,7 @@ const branches = [
                 name: "PPSCVS GSEB SCIENCE", 
                 addr: "ABRAMA", 
                 grade: "11TH STANDARD AND 12TH STANDARD", 
-                branch_type: "GUJRATI MEDIUM", 
+                branch_type: "GUJARATI MEDIUM", 
                 img: "P. P. Savani Chaitanya Vidya Sankul Abrama, Surat.png", 
                 links: { 
                     fb: "https://www.facebook.com/PPSAVANIGSEBABRAMA", 
@@ -294,9 +311,26 @@ const branches = [
                     map: "https://maps.app.goo.gl/RMwzTu5pWM38iCzb9", 
                     web: "https://ppsavanigseb.org/" 
                 } 
+            }
+        ]
+    },
+    { 
+                name: "P.P SAVANI CHAITANYA VIDYA SANKUL - ABRAMA ( CBSE)", 
+                addr: "ABRAMA", 
+                grade: "NURSURY TO 12TH SCIENCE - COMMERCE & HUMANITIES", 
+                branch_type: "ENGLISH MEDIUM", 
+                img: "P. P. Savani Chaitanya Vidya Sankul Abrama, Surat.png", 
+                links: { 
+                    fb: "https://www.facebook.com/PPSAVANICBSEABRAMA", 
+                    ig: "https://www.instagram.com/ppsavani_cbse/", 
+                    yt: "https://www.youtube.com/@PPSAVANIABRAMA", 
+                    phone: ["+91 99099 91024", "+91 99099 91034"], 
+                    map: "https://maps.app.goo.gl/RMwzTu5pWM38iCzb9", 
+                    web: "https://ppsavanicbse.org/" 
+                } 
             },
-            { 
-                name: "PPSCVS GSEB ENGLISH MEDIUM", 
+    { 
+                name: "P.P SAVANI CHAITANYA VIDYA SANKUL - ABRAMA (GSEB ENGLISH MEDIUM)", 
                 addr: "ABRAMA", 
                 grade: "NURSURY TO 11TH STANDARD", 
                 branch_type: "ENGLISH MEDIUM", 
@@ -309,9 +343,7 @@ const branches = [
                     map: "https://maps.app.goo.gl/RMwzTu5pWM38iCzb9", 
                     web: null
                 } 
-            }
-        ]
-    },
+            },
     { 
         name: "P.P SAVANI CAMBRIDGE INTERNAL SCHOOL-ABRAMA", 
         addr: "ABRAMA", 
@@ -324,7 +356,7 @@ const branches = [
         name: "P.P. SAVANI CENTER FOR EXCELLENCE- ABRAMA", 
         addr: "ABRAMA", 
         grade: "6TH STANDARD TO 12TH STANDARD", 
-        branch_type: "IIT/JEE/NEET/CA/CS/\nFOUNDATION\nENGLISH & GUJRATI MEDIUM", 
+        branch_type: "IIT/JEE/NEET/CA/CS/\nFOUNDATION\nENGLISH & GUJARATI MEDIUM", 
         img: "P. P. Savani Centre for Excellence Surat.png", 
         links: { fb: "https://www.facebook.com/ppsavanicenterforexcellence", ig: "https://www.instagram.com/ppsavanicfe/", yt: "https://www.youtube.com/@cfekota", phone: ["+91 99099 91029", "+91 99099 91034"], map: "https://maps.app.goo.gl/19kz1gEwewDwJQQZ9", web: null } 
     },
@@ -332,7 +364,7 @@ const branches = [
         name: "P. P. SAVANI VIDHYABHAVAN - HIRABAUGH", 
         addr: "HIRABAUGH, SURAT", 
         grade: "NURSURY TO 12TH STANDARD", 
-        branch_type: "GSEB\nGUJRATI MEDIUM", 
+        branch_type: "GSEB\nGUJARATI MEDIUM", 
         img: "P. P. Savani Vidhyabhavan Hirabaugh, Surat.png", 
         links: { fb: "#", ig: "https://www.instagram.com/ppsv_science_hirabaug/", yt: "http://www.youtube.com/@ppsavanihirabaug8232", phone: ["0261-6503377", "0261-6503388", "+91 99099 91034"], map: "https://maps.google.com/maps?ll=21.217781,72.85959&z=16&t=m&hl=en-US&gl=US&mapclient=embed&cid=3228998148117289725", web: "http://ppsavani.org/" } 
     },
@@ -340,7 +372,7 @@ const branches = [
         name: "P P SAVANI VIDHYALAY DHARTI NAGAR - SURAT", 
         addr: "SURAT", 
         grade: "GSEB NURSURY -12TH STANDARD", 
-        branch_type: "GSEB\nGUJRATI MEDIUM", 
+        branch_type: "GSEB\nGUJARATI MEDIUM", 
         img: "P. P. Savani Vidyalay Dhartinagar, Surat.png", 
         links: { fb: "https://www.facebook.com/p/PPSavani-Vidhyalaya-Dhartinagar-100067607014055/", ig: "https://www.instagram.com/popular/pp-savani-school-dharti-nagar/", yt: "#", phone: "#", map: "https://maps.app.goo.gl/pRdvSVmTMHF6QGUd8", web: "#" } 
     },
@@ -470,11 +502,24 @@ function openListView() {
 function closeListView() { document.getElementById('list-view').style.display = 'none'; }
 function closeCard() { document.getElementById('card-detail-view').style.display = 'none'; }
 function downloadVCard() {
-    const vcard = `BEGIN:VCARD\nVERSION:3.0\nFN:Pranay Jardosh\nTEL;TYPE=CELL:+9199251 66695\nEND:VCARD`;
+    const vcard = `BEGIN:VCARD
+VERSION:3.0
+FN:Pranay Jardosh
+ORG:PP Savani Group
+TITLE:Director
+TEL;TYPE=CELL:+919925166695
+EMAIL;TYPE=INTERNET:director@ppsavanicbse.org
+EMAIL;TYPE=INTERNET:franchise@ppsavanicbse.org
+ADR;TYPE=WORK:;;P.P.Savani Chaitanya Vidya Sankul Abrama;Surat;Gujarat;394150;India
+END:VCARD`;
+
     const blob = new Blob([vcard], { type: 'text/vcard' });
     const url = window.URL.createObjectURL(blob);
     const link = document.createElement('a');
-    link.href = url; link.download = 'Pranay_Jardosh.vcf'; link.click();
+    link.href = url; 
+    link.download = 'Pranay_Jardosh.vcf'; 
+    link.click();
+    window.URL.revokeObjectURL(url); // Clean up memory
 }
 </script>
 </body>
