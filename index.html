@@ -264,6 +264,44 @@ html,body{
 let currentData = [];
 const branches = [
     { 
+        name: "P.P SAVANI CAMBRIDGE INTERNAL SCHOOL-ABRAMA", 
+        addr: "ABRAMA", 
+        grade: "NURSURY TO 12TH SCIENCE & COMMERCE", 
+        branch_type: "CAMBRIDGE", 
+        img: "P. P. Savani Cambridge International School - Abrama, Surat.png", 
+        links: { fb: "https://www.facebook.com/PPSCISABRAMA", ig: "https://www.instagram.com/ppsavani_cambridge/", yt: "https://www.youtube.com/@PPSAVANIABRAMA", phone: ["+91 99099 91029", "+91 99099 91034"], map: "https://maps.app.goo.gl/Sw9viBjUB1KCtGcx7", web: "https://ppscis.org.in/" } 
+    }, 
+        { 
+                name: "P.P SAVANI CHAITANYA VIDYA SANKUL - ABRAMA ( CBSE)", 
+                addr: "ABRAMA", 
+                grade: "NURSURY TO 12TH SCIENCE - COMMERCE & HUMANITIES", 
+                branch_type: "ENGLISH MEDIUM", 
+                img: "P. P. Savani Chaitanya Vidya Sankul Abrama, Surat.png", 
+                links: { 
+                    fb: "https://www.facebook.com/PPSAVANICBSEABRAMA", 
+                    ig: "https://www.instagram.com/ppsavani_cbse/", 
+                    yt: "https://www.youtube.com/@PPSAVANIABRAMA", 
+                    phone: ["+91 99099 91024", "+91 99099 91034"], 
+                    map: "https://maps.app.goo.gl/RMwzTu5pWM38iCzb9", 
+                    web: "https://ppsavanicbse.org/" 
+                } 
+            }, 
+                { 
+                name: "P.P SAVANI CHAITANYA VIDYA SANKUL - ABRAMA (GSEB ENGLISH MEDIUM)", 
+                addr: "ABRAMA", 
+                grade: "NURSURY TO 11TH STANDARD", 
+                branch_type: "ENGLISH MEDIUM", 
+                img: "P. P. Savani Chaitanya Vidya Sankul Abrama, Surat.png", 
+                links: { 
+                    fb: "https://www.facebook.com/PPSCVSGSEBENGMED", 
+                    ig: "https://www.instagram.com/ppsavani_gseb_eng/", 
+                    yt: "https://www.youtube.com/@PPSAVANIABRAMA", 
+                    phone: ["+91 99099 91028", "+91 99099 91034"], 
+                    map: "https://maps.app.goo.gl/RMwzTu5pWM38iCzb9", 
+                    web: null
+                } 
+            },  
+{ 
         name: "P.P SAVANI CHAITANYA VIDYA SANKUL - ABRAMA (GSEB GUJARATI/GUJLISH MEDIUM)", 
         isCategory: true,
         subBranches: [
@@ -313,44 +351,6 @@ const branches = [
                 } 
             }
         ]
-    },
-    { 
-                name: "P.P SAVANI CHAITANYA VIDYA SANKUL - ABRAMA ( CBSE)", 
-                addr: "ABRAMA", 
-                grade: "NURSURY TO 12TH SCIENCE - COMMERCE & HUMANITIES", 
-                branch_type: "ENGLISH MEDIUM", 
-                img: "P. P. Savani Chaitanya Vidya Sankul Abrama, Surat.png", 
-                links: { 
-                    fb: "https://www.facebook.com/PPSAVANICBSEABRAMA", 
-                    ig: "https://www.instagram.com/ppsavani_cbse/", 
-                    yt: "https://www.youtube.com/@PPSAVANIABRAMA", 
-                    phone: ["+91 99099 91024", "+91 99099 91034"], 
-                    map: "https://maps.app.goo.gl/RMwzTu5pWM38iCzb9", 
-                    web: "https://ppsavanicbse.org/" 
-                } 
-            },
-    { 
-                name: "P.P SAVANI CHAITANYA VIDYA SANKUL - ABRAMA (GSEB ENGLISH MEDIUM)", 
-                addr: "ABRAMA", 
-                grade: "NURSURY TO 11TH STANDARD", 
-                branch_type: "ENGLISH MEDIUM", 
-                img: "P. P. Savani Chaitanya Vidya Sankul Abrama, Surat.png", 
-                links: { 
-                    fb: "https://www.facebook.com/PPSCVSGSEBENGMED", 
-                    ig: "https://www.instagram.com/ppsavani_gseb_eng/", 
-                    yt: "https://www.youtube.com/@PPSAVANIABRAMA", 
-                    phone: ["+91 99099 91028", "+91 99099 91034"], 
-                    map: "https://maps.app.goo.gl/RMwzTu5pWM38iCzb9", 
-                    web: null
-                } 
-            },
-    { 
-        name: "P.P SAVANI CAMBRIDGE INTERNAL SCHOOL-ABRAMA", 
-        addr: "ABRAMA", 
-        grade: "NURSURY TO 12TH SCIENCE & COMMERCE", 
-        branch_type: "CAMBRIDGE", 
-        img: "P. P. Savani Cambridge International School - Abrama, Surat.png", 
-        links: { fb: "https://www.facebook.com/PPSCISABRAMA", ig: "https://www.instagram.com/ppsavani_cambridge/", yt: "https://www.youtube.com/@PPSAVANIABRAMA", phone: ["+91 99099 91029", "+91 99099 91034"], map: "https://maps.app.goo.gl/Sw9viBjUB1KCtGcx7", web: "https://ppscis.org.in/" } 
     },
     { 
         name: "P.P. SAVANI CENTER FOR EXCELLENCE- ABRAMA", 
@@ -409,6 +409,7 @@ const branches = [
         links: { fb: "https://www.facebook.com/PPSAVANICBSESCHOOL", ig: "https://cbse.ppsavaniank.com/#", yt: ["https://www.youtube.com/@p.p.savanischoolcbseankles8987","https://www.youtube.com/@PPSAVANISCHOOLEM"], phone: ["+9199258 72000","+919925 87300", "+9163520 27721"], map: "https://maps.app.goo.gl/APudzo9tBTro1mVU6", web: "https://www.ppsavaniank.com/" } 
     }
 ];
+
 
 let isGridView = false;
 
@@ -521,6 +522,34 @@ END:VCARD`;
     link.click();
     window.URL.revokeObjectURL(url); // Clean up memory
 }
+</script>
+<script>
+// Disable right click
+document.addEventListener('contextmenu', function(e) {
+    e.preventDefault();
+});
+
+// Disable key shortcuts
+document.addEventListener('keydown', function(e) {
+    if (
+        e.key === "F12" ||
+        (e.ctrlKey && e.key.toLowerCase() === "u") ||
+        (e.ctrlKey && e.shiftKey && ["i","j","c"].includes(e.key.toLowerCase()))
+    ) {
+        e.preventDefault();
+    }
+});
+
+// DevTools detection (basic)
+setInterval(function() {
+    const devtoolsOpen = 
+        window.outerWidth - window.innerWidth > 150 || 
+        window.outerHeight - window.innerHeight > 150;
+
+    if (devtoolsOpen) {
+        document.body.innerHTML = "<h1 style='text-align:center;margin-top:50%'>Access Denied</h1>";
+    }
+}, 1000);
 </script>
 </body>
 </html>
